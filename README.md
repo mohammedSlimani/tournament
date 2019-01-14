@@ -11,4 +11,4 @@ I have chosen to go with the Layerd architecture pattern. I am interested in the
 ## Design pattern
 Even thoght I have read that MVC is no longer a good design pattern (https://cirw.in/blog/time-to-move-on). I have to see for myself the limitations of this design pattern so I can get a good grasp of why I should be considering using other design patterns, for example : MOVE ( Models, Operations, Views, Events.). 
 
-### See the uml graphs for better understanding of this app
+##### See the uml graphs for a better understanding of this app
