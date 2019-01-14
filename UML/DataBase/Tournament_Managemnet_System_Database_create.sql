@@ -36,14 +36,14 @@ CREATE TABLE teammates (
 -- Table: tournament
 CREATE TABLE tournament (
     id int NOT NULL AUTO_INCREMENT COMMENT 'The Version of the current tournament',
-    date_start date NOT NULL DEFAULT current date.  COMMENT 'The date where this tournament first started',
+    date_start date NOT NULL COMMENT 'The date where this tournament first started',
     date_end date NULL COMMENT 'The time where the last match is played and the tournament is finished',
     registration_end date NOT NULL COMMENT 'the last date where users can register their teams. Teams after the date wont be accepted',
     CONSTRAINT tournament_pk PRIMARY KEY (id)
 ) COMMENT 'We have chosen to separate these two tables (tournament and match) from the others to save as less as possible informations about the previous tournaments.  ';
 
 -- Table: user
-CREATE TABLE user (
+CREATE TABLE user_acc (
     id int NOT NULL AUTO_INCREMENT COMMENT 'id of the user',
     team varchar(50) NULL COMMENT 'The name of the team of the captain. This field is null for admin and responsibles.  ',
     name varchar(50) NOT NULL COMMENT 'full name of the user',
@@ -56,7 +56,7 @@ CREATE TABLE user (
 -- foreign keys
 -- Reference: Auth_user (table: auth)
 ALTER TABLE auth ADD CONSTRAINT Auth_user FOREIGN KEY Auth_user (user_id)
-    REFERENCES user (id);
+    REFERENCES user_acc (id);
 
 -- Reference: match_Tournament (table: match)
 ALTER TABLE `match` ADD CONSTRAINT match_Tournament FOREIGN KEY match_Tournament (tournament_id)
@@ -64,7 +64,7 @@ ALTER TABLE `match` ADD CONSTRAINT match_Tournament FOREIGN KEY match_Tournament
 
 -- Reference: teammates_user (table: teammates)
 ALTER TABLE teammates ADD CONSTRAINT teammates_user FOREIGN KEY teammates_user (user_id)
-    REFERENCES user (id);
+    REFERENCES user_acc (id);
 
 -- End of file.
 
