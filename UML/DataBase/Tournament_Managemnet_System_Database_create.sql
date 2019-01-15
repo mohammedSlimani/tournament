@@ -47,6 +47,7 @@ CREATE TABLE user_acc (
     id int NOT NULL AUTO_INCREMENT COMMENT 'id of the user',
     team varchar(50) NULL COMMENT 'The name of the team of the captain. This field is null for admin and responsibles.  ',
     name varchar(50) NOT NULL COMMENT 'full name of the user',
+    phone varchar(10) NOT NULL COMMENT 'Phone number 0612345678',
     type int NOT NULL DEFAULT 3 COMMENT '1: admin
 2: responsible
 3: captain ',
