@@ -4,7 +4,53 @@ html,body{
 	height: 100%;
 	width: 100%;
 	font-family: 'Poppins',sans-serif;
-	color: #222; 
+	color: #222;
+}
+
+/* for the uploaded image
+*/
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 80%;
+}
+
+/*****************************/
+
+/*  Search bar Css*/
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+/******************/
+
+.span6{
+	float:none;
+	margin:auto;
 }
 
 .card-body{
@@ -51,11 +97,11 @@ html,body{
 }
 .btn-primary{
 	background-color:#6648b1;
-	border: 1px solid #6648b1; 
+	border: 1px solid #6648b1;
 }
 .btn-primary:hover{
 	background-color:#563d7c;
-	border: 1px solid #563d7c; 
+	border: 1px solid #563d7c;
 }
 
 .jumbotron{
@@ -72,7 +118,7 @@ html,body{
 }
 .welcome hr{
 	border-top:2px solid #b4b4b4;
-	width: 95%; 
+	width: 95%;
 	margin-top: .3rem;
 	margin-bottom: 1rem;
 
@@ -102,7 +148,7 @@ html,body{
 
 .social a{
 	font-size: 4.5em;
-	padding:3rem; 
+	padding:3rem;
 }
 #lastimg{
 	max-width: 40px;
@@ -111,7 +157,7 @@ html,body{
 footer{
 	background-color: #3f3f3f;
 	color: #d5d5d5;
-	padding-top: 2rem; 
+	padding-top: 2rem;
 }
 hr.light{
 	border-top:1px solid #d5d5d5;
@@ -223,11 +269,3 @@ Large (lg) devices (desktops, 992px and up)
 Extra (xl) large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { ... }
 */
-
-
-
-
-
-
-
-

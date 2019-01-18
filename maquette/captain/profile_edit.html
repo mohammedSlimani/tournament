@@ -41,14 +41,14 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="main.html">Home</a>
+        <li class="nav-item">
+          <a class="nav-link " href="main.html">Home</a>
+        </li>
+        <li class="nav-item">
+					<a class="nav-link active" href="profile_edit.html">Edit profile</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="profile_edit.html">Edit profile</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link active" href="team_edit.html">Edit Team</a>
+					<a class="nav-link" href="team_edit.html">Edit Team</a>
 				</li>
 			</ul>
 		</div>
@@ -56,62 +56,34 @@
 </nav>
 
 <!--title and picture -->
-
-<div class="container padding">
-	<div class="row">
-
-		<div class="col-12">
-			<div class="span6">
-
-				<div class="display-6 text-center">
-					Your team Title
-				</div>
-			</div>
-		</div>
-		<div class="span6">
-			<div class="col-12">
-			    <div class="form-group">
-			        <label>Upload Team icon (not necesseray)</label>
-			        <div class="input-group">
-			            <span class="input-group-btn">
-			                <span class="btn btn-default btn-file">
-			                    Browse… <input type="file" id="imgInp">
-			                </span>
-			            </span>
-			            <input type="text" class="form-control" readonly>
-			        </div>
-							<div class="span6">
-									<img id='img-upload'/>
-							</div>
-			    </div>
-			</div>
-		</div>
+<div class="container col-6 padding">
+  <div class="display-4">
+    You have the right to change the password, See how nice I am :)
+  </div>
+    <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Old Password </span>
+    </div>
+    <input type="text" class="form-control">
+  </div>
+  <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">New Password </span>
+  </div>
+  <input type="text" class="form-control">
+  </div>
+  <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Confirm   </span>
+  </div>
+  <input type="text" class="form-control">
+  </div>
+  <div class="input-group">
+  <button class="btn btn-primary"type="button" name="button">Change password</button>
 </div>
 </div>
 
-<!-- team members -->
-<div class="container padding">
-	<div class="row">
-		<div class="span6">
 
-
-			<input type="hidden" name="count" value="1" />
-	        <div class="control-group" id="fields">
-	            <label class="control-label" for="field1">Enter Team names including yours :)</label>
-	            <div class="controls" id="profs">
-	                <div class="input-append">
-	                    <input autocomplete="off" class="span3" id="field1" name="prof1" type="text" placeholder="Type something (it has typeahead too)" data-provide="typeahead" data-items="8" data-source='["Aardvark","Beatlejuice","Capricorn","Deathmaul","Epic"]'/>
-											<button id="b1" class="btn btn-info add-more" type="button">+</button>
-	                </div>
-	            <br>
-	            <small>Press + to add another Player, Max 8:)</small>
-							<br>
-							<button class="btn btn-primary">Submit Team!</button>
-							</div>
-	        </div>
-			</div>
-	</div>
-</div>
 
 <!--footer-->
 <footer>
