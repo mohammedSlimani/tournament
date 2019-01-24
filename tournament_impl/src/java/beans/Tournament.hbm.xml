@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-Jan-2019 17:29:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="beans.Tournament" table="tournament" catalog="tournament" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="dateStart" type="date">
+            <column name="date_start" length="10" not-null="true">
+                <comment>The date where this tournament first started</comment>
+            </column>
+        </property>
+        <property name="dateEnd" type="date">
+            <column name="date_end" length="10">
+                <comment>The time where the last match is played and the tournament is finished</comment>
+            </column>
+        </property>
+        <property name="registrationEnd" type="date">
+            <column name="registration_end" length="10" not-null="true">
+                <comment>the last date where users can register their teams. Teams after the date wont be accepted</comment>
+            </column>
+        </property>
+        <set name="matches" table="match" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tournament_id" not-null="true">
+                    <comment>to which tournament this match belongs</comment>
+                </column>
+            </key>
+            <one-to-many class="beans.Match" />
+        </set>
+    </class>
+</hibernate-mapping>

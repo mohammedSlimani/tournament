@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-Jan-2019 17:29:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="beans.UserAcc" table="user_acc" catalog="tournament" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="team" type="string">
+            <column name="team" length="50">
+                <comment>The name of the team of the captain. This field is null for admin and responsibles.</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="50" not-null="true">
+                <comment>full name of the user</comment>
+            </column>
+        </property>
+        <property name="type" type="int">
+            <column name="type" not-null="true">
+                <comment>1: admin 2: responsible 3: captain</comment>
+            </column>
+        </property>
+        <property name="approved" type="boolean">
+            <column name="approved" not-null="true" />
+        </property>
+        <set name="auths" table="auth" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" not-null="true">
+                    <comment>to whom these informations belongs.</comment>
+                </column>
+            </key>
+            <one-to-many class="beans.Auth" />
+        </set>
+        <set name="teammateses" table="teammates" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_id" not-null="true">
+                    <comment>foreign key from the user table. To separate teams from each other.</comment>
+                </column>
+            </key>
+            <one-to-many class="beans.Teammates" />
+        </set>
+    </class>
+</hibernate-mapping>

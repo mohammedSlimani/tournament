@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-Jan-2019 17:29:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="beans.Auth" table="auth" catalog="tournament" optimistic-lock="version">
+        <id name="username" type="string">
+            <column name="username" length="50" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="userAcc" class="beans.UserAcc" fetch="select">
+            <column name="user_id" not-null="true">
+                <comment>to whom these informations belongs.</comment>
+            </column>
+        </many-to-one>
+        <property name="password" type="string">
+            <column name="password" length="50" not-null="true">
+                <comment>used for logging in. Should be encrypted. Another field of salt should be added for more security but ... It is not needed.</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

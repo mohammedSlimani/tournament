@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-Jan-2019 17:29:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="beans.Match" table="match" catalog="tournament" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tournament" class="beans.Tournament" fetch="select">
+            <column name="tournament_id" not-null="true">
+                <comment>to which tournament this match belongs</comment>
+            </column>
+        </many-to-one>
+        <property name="teamA" type="string">
+            <column name="team_a" length="50" not-null="true">
+                <comment>name of one of the teams in this match</comment>
+            </column>
+        </property>
+        <property name="teamB" type="string">
+            <column name="team_b" length="50" not-null="true">
+                <comment>name of the other team</comment>
+            </column>
+        </property>
+        <property name="scoreA" type="int">
+            <column name="score_a" not-null="true">
+                <comment>the score of the first team. The responsible is the only one who can enter it.</comment>
+            </column>
+        </property>
+        <property name="scoreB" type="int">
+            <column name="score_b" not-null="true">
+                <comment>the score of the second team. The responsible is the only one who can enter it.</comment>
+            </column>
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" not-null="true">
+                <comment>the date where this match has/will start</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
