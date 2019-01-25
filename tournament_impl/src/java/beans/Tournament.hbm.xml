@@ -23,6 +23,11 @@
                 <comment>the last date where users can register their teams. Teams after the date wont be accepted</comment>
             </column>
         </property>
+        <property name ="state" type="java.lang.Integer">
+            <column name="state" not-null="true">
+                <comment> state of tournament : ongoing, ended</comment>
+            </column>
+        </property>
         <set name="matches" table="match" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="tournament_id" not-null="true">

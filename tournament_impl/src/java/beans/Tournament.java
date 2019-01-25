@@ -16,6 +16,7 @@ public class Tournament  implements java.io.Serializable {
      private Date dateStart;
      private Date dateEnd;
      private Date registrationEnd;
+     private Integer state;
      private Set matches = new HashSet(0);
 
     public Tournament() {
@@ -60,6 +61,12 @@ public class Tournament  implements java.io.Serializable {
     
     public void setRegistrationEnd(Date registrationEnd) {
         this.registrationEnd = registrationEnd;
+    }
+    public Integer getState(){
+        return this.state;
+    }  
+    public void setState(Integer state){
+        this.state = state;
     }
     public Set getMatches() {
         return this.matches;
