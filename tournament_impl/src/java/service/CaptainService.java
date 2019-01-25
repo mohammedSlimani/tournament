@@ -11,7 +11,7 @@ import beans.UserAcc;
  *
  * @author rick
  */
-public interface UserService {
+public interface CaptainService {
     
     boolean startRegistration(int id_trnmt);
     
