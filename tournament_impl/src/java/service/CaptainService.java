@@ -6,6 +6,7 @@
 package service;
 
 import beans.UserAcc;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -13,13 +14,11 @@ import beans.UserAcc;
  */
 public interface CaptainService {
     
-    boolean startRegistration(int id_trnmt);
+    boolean addTeam(HttpServletRequest request);
     
-    boolean endRegistration(int id_trnmt);
+    boolean editPersonalInfo(HttpServletRequest request);
     
-    boolean addTeam();
-    
-    boolean editPersonalInfo(UserAcc oldOne, UserAcc newOne);
+    boolean registerTeam(HttpServletRequest request);
     
     
     

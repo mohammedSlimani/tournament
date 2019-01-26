@@ -8,6 +8,7 @@ package service;
 import beans.Match;
 import beans.UserAcc;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -27,7 +28,7 @@ public interface MatchService {
      * @param teamB
      * @return 
      */
-    boolean enterResult(int teamA, int teamB);
+    boolean enterResult(HttpServletRequest request);
     
     /**
      * get the matches that have been played
