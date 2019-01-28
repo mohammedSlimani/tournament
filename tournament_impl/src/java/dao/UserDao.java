@@ -31,6 +31,9 @@ public interface UserDao {
     
     List getTeammates(UserAcc captain);
     
+    UserAcc login(String username,String password);
+    
+    boolean register(UserAcc user, Auth auth);
     //edit teammates ?
     
     
