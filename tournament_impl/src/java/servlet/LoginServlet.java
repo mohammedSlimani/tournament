@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
         //After this, we now have a user defined in the session scope if the login was successful 
         
         HttpSession session = request.getSession();
-        UserAcc user = (UserAcc) session.getAttribute("user");
+        UserAcc user = (UserAcc) session.getAttribute("CURRENT_USER");
         
         //If the login failed!
         if(user == null){
@@ -40,13 +40,14 @@ public class LoginServlet extends HttpServlet {
             //The user was successefully logged in. we redirect it according to it's role
             switch(user.getType()){
                 case 1://Admin
-                    request.getRequestDispatcher("/admin/main.jsp").forward(request, response);
+                    request.getRequestDispatcher("admin/main.jsp").forward(request, response);
+                    //response.sendRedirect(request.getContextPath() + "/admin/main");
                     break;
                 case 2://Responsible
-                    request.getRequestDispatcher("/responsible/main.jsp").forward(request, response);
+                    request.getRequestDispatcher("responsible/main.jsp").forward(request, response);
                     break;
                 case 3://captain
-                    request.getRequestDispatcher("/captain/main.jsp").forward(request, response);
+                    request.getRequestDispatcher("captain/main.jsp").forward(request, response);
                     break;
                 default:
                     request.getRequestDispatcher("index.jsp").forward(request, response);

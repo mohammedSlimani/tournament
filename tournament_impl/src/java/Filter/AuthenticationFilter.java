@@ -35,7 +35,7 @@ public class AuthenticationFilter implements Filter {
 	}
 	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-
+/*
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 		
@@ -47,16 +47,11 @@ public class AuthenticationFilter implements Filter {
 		if(session == null && !(uri.endsWith("jsp") || uri.endsWith("LoginServlet"))){
 			this.context.log("Unauthorized access request");
 			res.sendRedirect("index.jsp");
-		}else{
+		}else{*/
 			// pass the request along the filter chain
 			chain.doFilter(request, response);
 		}
-		
-		
-	}
-
 	public void destroy() {
 		//close any resources here
-	}
-
+	}	
 }

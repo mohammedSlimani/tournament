@@ -15,13 +15,14 @@ import daoImpl.UserDaoImpl;
  */
 public class DAOTest {
     public static void main(String[]args){
-        loginTest();
+        //loginTest();
+        addUserAccTest();
         
     }
     
     public static void addUserAccTest(){
-        UserAcc med = new UserAcc("tata", 2, true);
-        Auth auth = new Auth("username3", med, "password");
+        UserAcc med = new UserAcc("admin", 1, true);
+        Auth auth = new Auth("admin", med, "admin");
         
         UserDaoImpl dao = new UserDaoImpl();
         if(dao.addUser(med, auth)){

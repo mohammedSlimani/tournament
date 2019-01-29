@@ -1,3 +1,10 @@
+<%-- 
+    Document   : more
+    Created on : 29-Jan-2019, 20:51:29
+    Author     : rick
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +31,7 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html"><img class="img-responsive" src="assets/img/png/football-championship-trophy-variant.png">
+			<a class="navbar-brand" href="${pageContext.request.contextPath}/home"><img class="img-responsive" src="assets/img/png/football-championship-trophy-variant.png">
 				Ensias Tournament <img class="img-responsive" src="assets/img/png/football-championship-trophy-variant.png"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 				<span class="navbar-toggler-icon"></span>
@@ -32,7 +39,7 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link active" href="index.html">Home</a>
+						<a class="nav-link active" href="${pageContext.request.contextPath}/home">Home</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a>

@@ -254,7 +254,7 @@
                     <p>You can check the history of every Tournament that has been played before </p>
                     <p>Yeah, we know curious people like you exists </p>
                     <br>
-                    <a href="more.html" class="btn btn-primary">Learn more</a>
+                    <a href="${pageContext.request.contextPath}/more" class="btn btn-primary">Learn more</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="tenor-gif-embed" data-postid="12587594" data-share-method="host" data-width="100%" data-aspect-ratio="1.0375">

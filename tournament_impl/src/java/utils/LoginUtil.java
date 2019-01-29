@@ -35,7 +35,7 @@ public class LoginUtil {
         //set the session variable for other uses.
         
         HttpSession session = request.getSession();
-	session.setAttribute("user", user);
+	session.setAttribute("CURRENT_USER", user);
 
     }
     
