@@ -13,12 +13,12 @@ import java.util.List;
  * @author rick
  */
 public interface MatchDao {
-    
-   boolean addMatch(Match match);
-   
-   boolean deleteMatch(Match match);
-    
-   List getAllmatches();//and I filter this in my Matchservice
-   
-   boolean editMatch(Match match);
+
+    boolean addMatch(Match match);
+
+    boolean deleteMatch(Match match);
+
+    List getAllmatches();//and I filter this in my Matchservice
+
+    boolean editMatch(Match match);
 }

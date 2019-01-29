@@ -13,21 +13,21 @@ import beans.UserAcc;
  * @author rick
  */
 public interface TournamentService {
-    
+
     /**
      * getting the winner of each tournament
+     *
      * @param id_trnmt
-     * @return 
+     * @return
      */
     UserAcc getWinner(int id_trnmt);
-    
+
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
     boolean startNewTournament(Tournament trnmt);
-    
-    boolean endTournament(Tournament trnmt);  
-    
-    
+
+    boolean endTournament(Tournament trnmt);
+
 }

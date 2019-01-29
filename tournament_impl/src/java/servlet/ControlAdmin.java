@@ -26,11 +26,10 @@ public class ControlAdmin extends HttpServlet {
         request.getRequestDispatcher("admin/control.jsp").forward(request, response);
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 
 }

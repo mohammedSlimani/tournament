@@ -22,12 +22,12 @@ import utils.HibernateUtil;
  * @author rick
  */
 public class UserDaoImpl implements UserDao {
-        
+
     @Override
     public boolean addUser(UserAcc user, Auth auth) {
-        
+
         Session session = HibernateUtil.getSessionFactory().openSession();
-        
+
         try {
             Transaction tx = session.beginTransaction();
             session.save(user);
@@ -36,7 +36,7 @@ public class UserDaoImpl implements UserDao {
             session.close();
             return true;
         } catch (Exception e) {
-            System.out.println("The shit happened: "+e);
+            System.out.println("The shit happened: " + e);
             session.close();
             return false;
         }
@@ -68,10 +68,10 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean addTeammates(Teammates teammates,UserAcc user) {
-        
+    public boolean addTeammates(Teammates teammates, UserAcc user) {
+
         Session session = HibernateUtil.getSessionFactory().openSession();
-        
+
         try {
             Transaction tx = session.beginTransaction();
             teammates.setId(user.getId());
@@ -80,10 +80,10 @@ public class UserDaoImpl implements UserDao {
             session.close();
             return true;
         } catch (Exception e) {
-            System.out.println("The shit happened: "+e);
+            System.out.println("The shit happened: " + e);
             session.close();
             return false;
-        }    
+        }
     }
 
     @Override
@@ -93,38 +93,37 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public UserAcc login(String username, String password) {
-        
+
         Session session = HibernateUtil.getSessionFactory().openSession();
-        
-        try {            
+
+        try {
             String hql = "FROM Auth A WHERE A.username = :_username AND A.password = :_password";
             Query query = session.createQuery(hql);
-            query.setParameter("_username",username);
-            query.setParameter("_password",password);
+            query.setParameter("_username", username);
+            query.setParameter("_password", password);
             List results = query.list();
-                        
-            if(results.isEmpty()){
+
+            if (results.isEmpty()) {
                 session.close();
                 System.out.println("The results is empty");
                 return null;
-            }
-            else{
-                Auth auth =(Auth)results.get(0);
-                UserAcc user =  auth.getUserAcc();
+            } else {
+                Auth auth = (Auth) results.get(0);
+                UserAcc user = auth.getUserAcc();
                 session.close();
                 return user;
             }
-            
+
         } catch (Exception e) {
-            System.out.println("The shit happened: "+e);
+            System.out.println("The shit happened: " + e);
             session.close();
             return null;
-        }   
+        }
     }
 
     @Override
     public boolean register(UserAcc user, Auth auth) {
         return addUser(user, auth);
     }
-    
+
 }

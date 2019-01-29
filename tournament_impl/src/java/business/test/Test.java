@@ -10,8 +10,9 @@ package business.test;
  * @author rick
  */
 public class Test {
-    public static void main(String[]args){
+
+    public static void main(String[] args) {
         //TODO: :) After I get some other stuff done :') 
-        
+
     }
 }

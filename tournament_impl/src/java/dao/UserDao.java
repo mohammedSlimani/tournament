@@ -15,28 +15,26 @@ import java.util.List;
  * @author rick
  */
 public interface UserDao {
-    
-    boolean addUser(UserAcc user,Auth auth);
-    
+
+    boolean addUser(UserAcc user, Auth auth);
+
     boolean deleteUser(UserAcc captain);
-    
+
     boolean deleteAllUsers();
-        
+
     List getAllCaptains();
-    
+
     List getAllResponsibles();
-    
+
     List getAllTeams();
-    
-    boolean addTeammates(Teammates teammates,UserAcc user);
-    
+
+    boolean addTeammates(Teammates teammates, UserAcc user);
+
     List getTeammates(UserAcc captain);
-    
-    UserAcc login(String username,String password);
-    
+
+    UserAcc login(String username, String password);
+
     boolean register(UserAcc user, Auth auth);
     //edit teammates ?
-    
-    
-    
+
 }

@@ -14,21 +14,23 @@ import java.util.List;
  * @author rick
  */
 public class Scheduler {
+
     /**
-     * return the list of players with additional "bye" players that Are going 
+     * return the list of players with additional "bye" players that Are going
      * to move to the next phase automatically
+     *
      * @param players
-     * @return 
+     * @return
      */
     private LinkedList<Player> players;
     private int entrants; //this is the number of reel players + number of bye players.
-    
-    public Scheduler(LinkedList<Player> players){
+
+    public Scheduler(LinkedList<Player> players) {
         this.players = players;//Not sure if this is quite good :')
         this.entrants = players.size();
     }
-    
-    public List addByePleayers(LinkedList<Player> players){
+
+    public List addByePleayers(LinkedList<Player> players) {
         //Maybe I dont need a return value, since this function is going to mutate
         //the original array. 
         Collections.sort(players);
@@ -52,19 +54,22 @@ public class Scheduler {
         }
         return players;
     }
-    
+
     /**
      * Return the Next round of matches.
+     *
      * @param players
-     * @return 
+     * @return
      */
-    public List<Match> getNextRound(LinkedList<Player> players){
+    public List<Match> getNextRound(LinkedList<Player> players) {
         LinkedList<Match> round = new LinkedList<Match>();	//round is list of matches
         while (!players.isEmpty()) {//if list of players isn't empty, 
-                round.addLast(new Match(players.pollFirst(), players.pollLast()));	//assign them a match
+            round.addLast(new Match(players.pollFirst(), players.pollLast()));	//assign them a match
         }
         return round;
-    };
+    }
+
+    ;
     
     /**
      * The round I am going to get it from the database. Leave it to the Service module
@@ -72,25 +77,24 @@ public class Scheduler {
      * @param round
      * @return 
      */
-    public LinkedList<Player> getResults(LinkedList<Match> round){ 
+    public LinkedList<Player> getResults(LinkedList<Match> round) {
         LinkedList<Player> results = new LinkedList<Player>();  //player placings to be updated as matches end
-        
-                   int roundSize = round.size();			//number of matches in the round
-            for (int i = 0; i < roundSize; i++) {
-                Match m = round.pollFirst();			//the match to be scored
-                players.addLast(m.setResults());	//set results of the match
-                
-                //update loser's placement
-                int place = (int) Math.pow(2, 32 - Integer.numberOfLeadingZeros(entrants - results.size() - 1) - 1) + 1;	//nearest lower power of 2, + 1
-                m.getLoser().setPlace(place);				//sets player's placement in the tournament
-                results.addFirst(m.getLoser());			//adds player to the front of results list to keep it sorted by higher placement
-            }
+
+        int roundSize = round.size();			//number of matches in the round
+        for (int i = 0; i < roundSize; i++) {
+            Match m = round.pollFirst();			//the match to be scored
+            players.addLast(m.setResults());	//set results of the match
+
+            //update loser's placement
+            int place = (int) Math.pow(2, 32 - Integer.numberOfLeadingZeros(entrants - results.size() - 1) - 1) + 1;	//nearest lower power of 2, + 1
+            m.getLoser().setPlace(place);				//sets player's placement in the tournament
+            results.addFirst(m.getLoser());			//adds player to the front of results list to keep it sorted by higher placement
+        }
         return results;
     }
-    
-    public boolean tournamentEned(){
+
+    public boolean tournamentEned() {
         return players.size() > 1;
     }
-    
-    
+
 }

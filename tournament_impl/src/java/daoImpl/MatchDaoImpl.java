@@ -34,5 +34,5 @@ public class MatchDaoImpl implements MatchDao {
     public boolean editMatch(Match match) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

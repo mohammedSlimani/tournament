@@ -15,12 +15,12 @@ import utils.HibernateUtil;
  *
  * @author rick
  */
-public class TournamentDaoImpl implements TournamentDao{
-        
-    protected Session getSession(){
+public class TournamentDaoImpl implements TournamentDao {
+
+    protected Session getSession() {
         return HibernateUtil.getSessionFactory().openSession();
     }
-    
+
     @Override
     public boolean addTournament(Tournament trn) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -45,5 +45,5 @@ public class TournamentDaoImpl implements TournamentDao{
     public List<Tournament> getEndedTournament() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

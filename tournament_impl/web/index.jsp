@@ -102,11 +102,10 @@
                         <div class="box">
                             <div class="content registerBox" style="display:none;">
                                 <div class="form">
-                                    <form method="post" data-remote="true" action="/register" accept-charset="UTF-8">
+                                    <form method="post" data-remote="true" action="${pageContext.request.contextPath}/register" accept-charset="UTF-8">
                                         <input id="username" class="form-control" type="text" placeholder="username" name="username">
-                                        <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                        <input id="full name" class="form-control" type="text" placeholder="full name" name="name">
                                         <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                        <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
                                         <input id="team_title" class="form-control" type="text" placeholder="Team title" name="team_title">
                                         <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
                                     </form>
