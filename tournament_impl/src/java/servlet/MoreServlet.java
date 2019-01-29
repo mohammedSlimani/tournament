@@ -26,11 +26,10 @@ public class MoreServlet extends HttpServlet {
         request.getRequestDispatcher("more.jsp").forward(request, response);
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 
 }

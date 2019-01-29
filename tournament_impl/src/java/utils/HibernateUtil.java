@@ -17,8 +17,8 @@ import org.hibernate.SessionFactory;
 public class HibernateUtil {
 
     private static final SessionFactory sessionFactory;
-     
-   static {
+
+    static {
         try {
             // Create the SessionFactory from standard (hibernate.cfg.xml) 
             // config file.
@@ -29,7 +29,7 @@ public class HibernateUtil {
             throw new ExceptionInInitializerError(ex);
         }
     }
-    
+
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }

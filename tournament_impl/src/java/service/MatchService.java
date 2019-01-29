@@ -15,43 +15,50 @@ import javax.servlet.http.HttpServletRequest;
  * @author rick
  */
 public interface MatchService {
-    
+
     /**
      * this method will pair teams against each other
-     * @return 
+     *
+     * @return
      */
     boolean MatchTeams();
-    
+
     /**
      * The responsible will enter the Result of each match after that match ends
+     *
      * @param teamA
      * @param teamB
-     * @return 
+     * @return
      */
     boolean enterResult(HttpServletRequest request);
-    
+
     /**
      * get the matches that have been played
-     * @return 
+     *
+     * @return
      */
     List<Match> getMatchHistory();
-    
+
     /**
-     * Get the match that has been played and awaits for the responsible to fill the match results
-     * @return 
+     * Get the match that has been played and awaits for the responsible to fill
+     * the match results
+     *
+     * @return
      */
     List<Match> getAppendingForResults();
-    
+
     /**
      * adds future matches.
-     * @return 
+     *
+     * @return
      */
     boolean scheduleMatches(List<UserAcc> avalible);
-    
+
     /**
      * get future matches
-     * @return 
+     *
+     * @return
      */
     List<Match> getFutureMatches();
-    
+
 }

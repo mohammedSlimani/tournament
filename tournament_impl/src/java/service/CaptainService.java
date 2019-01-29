@@ -13,13 +13,11 @@ import javax.servlet.http.HttpServletRequest;
  * @author rick
  */
 public interface CaptainService {
-    
+
     boolean addTeam(HttpServletRequest request);
-    
+
     boolean editPersonalInfo(HttpServletRequest request);
-    
+
     boolean registerTeam(HttpServletRequest request);
-    
-    
-    
+
 }

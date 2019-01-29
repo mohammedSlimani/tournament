@@ -13,14 +13,14 @@ import java.util.List;
  * @author rick
  */
 public interface TournamentDao {
-    
+
     boolean addTournament(Tournament trn);
-    
+
     boolean deleteTournament(Tournament trn);
-    
+
     boolean editTournament(Tournament trn);
-    
+
     List<Tournament> getOngoingTournament();
-    
+
     List<Tournament> getEndedTournament();
 }

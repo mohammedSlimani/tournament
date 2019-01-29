@@ -17,7 +17,6 @@
         <link rel="icon" href="assets/img/png/flaming-football.png">
         <link href="assets/css/jquery.bracket.min.css" rel="stylesheet">
         <link href="assets/css/login-register.css" rel="stylesheet" />
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
         <link href="assets/css/style.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -26,8 +25,6 @@
         <script src="assets/js/jquery.bracket.min.js"></script>
         <script type="text/javascript" src="assets/js/addfield.js"></script>
         <script src="assets/js/login-register.js" type="text/javascript"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="assets/js/addpic.js"></script>
     </head>
 
@@ -61,7 +58,7 @@
         <!--title and picture -->
         <div class="container col-6 padding">
             <div class="display-4">
-                You have the right to change the password, See how nice I am :)
+                You can change the password, See how nice I am :)
             </div>
             <div class="input-group">
                 <div class="input-group-prepend">

@@ -9,7 +9,6 @@ package Filter;
  *
  * @author rick
  */
-
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -27,31 +26,32 @@ import javax.servlet.http.HttpSession;
 @WebFilter("/AuthenticationFilter")
 public class AuthenticationFilter implements Filter {
 
-	private ServletContext context;
-	
-	public void init(FilterConfig fConfig) throws ServletException {
-		this.context = fConfig.getServletContext();
-		this.context.log("AuthenticationFilter initialized");
-	}
-	
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-/*
-		HttpServletRequest req = (HttpServletRequest) request;
-		HttpServletResponse res = (HttpServletResponse) response;
+    private ServletContext context;
+
+    public void init(FilterConfig fConfig) throws ServletException {
+        this.context = fConfig.getServletContext();
+        this.context.log("AuthenticationFilter initialized");
+    }
+
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        /*
+         HttpServletRequest req = (HttpServletRequest) request;
+         HttpServletResponse res = (HttpServletResponse) response;
 		
-		String uri = req.getRequestURI();
-		this.context.log("Requested Resource::"+uri);
+         String uri = req.getRequestURI();
+         this.context.log("Requested Resource::"+uri);
 		
-		HttpSession session = req.getSession(false);
+         HttpSession session = req.getSession(false);
 		
-		if(session == null && !(uri.endsWith("jsp") || uri.endsWith("LoginServlet"))){
-			this.context.log("Unauthorized access request");
-			res.sendRedirect("index.jsp");
-		}else{*/
-			// pass the request along the filter chain
-			chain.doFilter(request, response);
-		}
-	public void destroy() {
-		//close any resources here
-	}	
+         if(session == null && !(uri.endsWith("jsp") || uri.endsWith("LoginServlet"))){
+         this.context.log("Unauthorized access request");
+         res.sendRedirect("index.jsp");
+         }else{*/
+        // pass the request along the filter chain
+        chain.doFilter(request, response);
+    }
+
+    public void destroy() {
+        //close any resources here
+    }
 }
