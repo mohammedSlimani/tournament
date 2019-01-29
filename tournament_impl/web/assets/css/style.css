@@ -247,7 +247,7 @@ figure {
 }
 
 #fixed {
-  background-image: url('img/calm.jpg');
+  background-image: url('../img/calm.jpg');
   position: fixed;
   display: block;
   top: 0;

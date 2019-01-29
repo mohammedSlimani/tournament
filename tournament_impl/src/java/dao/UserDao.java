@@ -6,6 +6,7 @@
 package dao;
 
 import beans.Auth;
+import beans.Teammates;
 import beans.UserAcc;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public interface UserDao {
     
     List getAllTeams();
     
-    boolean addTeammates(List <String> teammates);
+    boolean addTeammates(Teammates teammates,UserAcc user);
     
     List getTeammates(UserAcc captain);
     

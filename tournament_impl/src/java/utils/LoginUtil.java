@@ -24,7 +24,7 @@ public class LoginUtil {
             return;
         
         //We fetsh the database to see if the Authenitcation is right
-        UserDao dao = UserDaoImpl.getInstance();
+        UserDaoImpl dao = new UserDaoImpl();
         UserAcc user = dao.login(username, password);
         
         //IF the Password ant the username dont match

@@ -91,8 +91,8 @@
                                 </div>
                                 <div class="error"></div>
                                 <div class="form loginBox">
-                                    <form method="post" action="/login" accept-charset="UTF-8">
-                                        <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                    <form method="post" action="${pageContext.request.contextPath}/login" accept-charset="UTF-8">
+                                        <input id="email" class="form-control" type="text" placeholder="Username" name="username">
                                         <input id="password" class="form-control" type="password" placeholder="Password" name="password">
                                         <input class="btn btn-default btn-login" type="submit" value="Login" >
                                     </form>

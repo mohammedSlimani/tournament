@@ -17,14 +17,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author rick
  */
-@WebServlet("/home")
+@WebServlet(urlPatterns = {"/home"}, name="MainServlet")
 public class MainServlet extends HttpServlet {
 
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);      
+     
     }
  
     @Override

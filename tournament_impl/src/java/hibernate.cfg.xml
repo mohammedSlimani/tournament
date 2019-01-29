@@ -8,6 +8,8 @@
     <property name="hibernate.connection.username">phpmyadmin</property>
     <property name="hibernate.connection.password">fuck</property>
     <!--Diffenetly wasn't feeling good when I was installing phpmyadmin in my linux system-->
+    <property name="show_sql">true</property>
+    <property name="hibernate.enable_lazy_load_no_trans">true</property>
     <mapping resource="beans/Tournament.hbm.xml"/>
     <mapping resource="beans/Auth.hbm.xml"/>
     <mapping resource="beans/Match.hbm.xml"/>
