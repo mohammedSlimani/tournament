@@ -66,17 +66,23 @@ public class LoginServlet extends HttpServlet {
             //The user was successefully logged in. we redirect it according to it's role
             switch (user.getType()) {
                 case 1://Admin
-                    request.getRequestDispatcher("admin/main.jsp").forward(request, response);
-                    //response.sendRedirect(request.getContextPath() + "/admin/main");
+                    //request.getRequestDispatcher("admin/main.jsp").forward(request, response);
+                    response.sendRedirect(request.getContextPath() + "/adminmain");
                     break;
                 case 2://Responsible
-                    request.getRequestDispatcher("responsible/main.jsp").forward(request, response);
+//                    request.getRequestDispatcher("responsible/main.jsp").forward(request, response);
+                    response.sendRedirect(request.getContextPath() + "/responsiblemain");
+
                     break;
                 case 3://captain
-                    request.getRequestDispatcher("captain/main.jsp").forward(request, response);
+//                  request.getRequestDispatcher("captain/main.jsp").forward(request, response);
+                    response.sendRedirect(request.getContextPath() + "/captainmain");
+
                     break;
                 default:
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                   // request.getRequestDispatcher("index.jsp").forward(request, response);
+                    response.sendRedirect(request.getContextPath() + "/home");
+
                     break;
             }
 

@@ -5,8 +5,11 @@
  */
 package servlet;
 
+import beans.UserAcc;
+import daoImpl.UserDaoImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +26,8 @@ public class MainAdmin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        UserDaoImpl dao = new UserDaoImpl();
+        request.setAttribute("responsibles",(List<UserAcc>) dao.getAllResponsibles());
         request.getRequestDispatcher("admin/main.jsp").forward(request, response);
 
     }

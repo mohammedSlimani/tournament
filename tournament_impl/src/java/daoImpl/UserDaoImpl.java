@@ -58,8 +58,30 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List getAllResponsibles() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<UserAcc> getAllResponsibles() {
+         Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            String hql = "FROM UserAcc WHERE type = 2";
+            Query query = session.createQuery(hql);
+            List results = query.list();
+
+            if (results.isEmpty()) {
+                session.close();
+                System.out.println("The results is empty");
+                return null;
+            } else {
+                List<UserAcc> responsibles = (List<UserAcc>) results;
+                System.out.println("responsibles are :" + responsibles);
+                session.close();
+                return responsibles;
+            }
+
+        } catch (Exception e) {
+            System.out.println("The shit happened: " + e);
+            session.close();
+            return null;
+        }
     }
 
     @Override
@@ -84,11 +106,6 @@ public class UserDaoImpl implements UserDao {
             session.close();
             return false;
         }
-    }
-
-    @Override
-    public List getTeammates(UserAcc captain) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

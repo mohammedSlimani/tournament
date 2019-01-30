@@ -12,6 +12,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import service.CaptainService;
+import serviceImpl.CaptainServiceImpl;
 
 /**
  *
@@ -23,6 +25,15 @@ public class TeamCaptain extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        CaptainServiceImpl sc = new CaptainServiceImpl();
+        String registerForm = request.getParameter("submit");
+        if(request.getParameter("registration") == null){    
+            if(sc.addTeam(request)){
+                response.sendRedirect(request.getContextPath() + "/captainmain");
+            }
+        }
+        
         request.getRequestDispatcher("captain/team.jsp").forward(request, response);
 
     }

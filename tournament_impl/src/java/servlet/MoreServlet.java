@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import daoImpl.MatchDaoImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -23,6 +24,9 @@ public class MoreServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        MatchDaoImpl dao = new MatchDaoImpl();
+        request.setAttribute("history", dao.getAllmatches());//list of matches
         request.getRequestDispatcher("more.jsp").forward(request, response);
     }
 

@@ -138,7 +138,7 @@
                 <hr />
                 <div class="col-5">
                     <div class="card">
-                        <div class="card-body"> Team A </div>
+                        <div class="card-body"><c:out value="${current_match.getTeamA()}" /></div>
                         <img class="card-img-bottom" src="assets/img/png/football-fan-raising-flag.png" alt="Card image cap">
                     </div>
                 </div>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="col-5">
                     <div class="card">
-                        <div class="card-body"> Team b</div>
+                        <div class="card-body"> <c:out value="${current_match.getTeamB()}" /></div>
                         <img class="card-img-bottom" src="assets/img/png/football-fan-raising-flag.png" alt="Card image cap">
                     </div>
                 </div>
@@ -165,47 +165,13 @@
                 <hr />
             </div>
         </div>
-        <div class="container">
-            <div class="tournament col-12">
-                <script>
-                    var minData = {
-                        teams: [
-                            ["A", "B"],
-                            ["C", "D"],
-                            ["E", "F"],
-                            ["G", "H"]
-                        ],
-                        results: [
-                            [
-                                [1, 3],
-                                [1, 4],
-                                [2, 5],
-                                [5, 1]
-                            ],
-                            [
-                                [1, 2],
-                                [4, 3]
-                            ],
-                            [
-                                [4, 7],
-                                [5, 4]
-                            ]
-                        ]
-                    }
-                    $('.tournament').bracket({
-                        init: minData
-                    });
-                </script>
-            </div>
-        </div>
-
+        
         <!-- Two Column Section -->
         <div class="container padding">
             <div class="col-12">
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th>#</th>
                             <th>Team A</th>
                             <th>Score A</th>
                             <th>Score B</th>
@@ -213,34 +179,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <c:forEach var="m" items="${history}">
                         <tr>
-                            <th scope="row">1</th>
-                            <td>A</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>B</td>
+                            <td>${m.getTeamA()}</td>
+                            <td>${m.getScoreA()}</td>
+                            <td>${m.getScoreB()}</td>
+                            <td>${m.getTeamB()}</td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>C</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>D</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>A</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>B</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>C</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>D</td>
-                        </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>

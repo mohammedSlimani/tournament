@@ -149,7 +149,6 @@
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th>#</th>
                             <th>Team A</th>
                             <th>Score A</th>
                             <th>Score B</th>
@@ -157,104 +156,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <c:forEach var="m" items="${history}">
                         <tr>
-                            <th scope="row">1</th>
-                            <td>A</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>B</td>
+                            <td>${m.getTeamA()}</td>
+                            <td>${m.getScoreA()}</td>
+                            <td>${m.getScoreB()}</td>
+                            <td>${m.getTeamB()}</td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>C</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>D</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>A</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>B</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>C</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>D</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>A</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>B</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>C</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>D</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">7</th>
-                            <td>A</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>B</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td>C</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>D</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td>A</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>B</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">10</th>
-                            <td>C</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>D</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">11</th>
-                            <td>A</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>B</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">12</th>
-                            <td>C</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>D</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">13</th>
-                            <td>A</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>B</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">14</th>
-                            <td>C</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>D</td>
-                        </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>

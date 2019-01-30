@@ -55,24 +55,35 @@
                     Team requests
                 </div>
                 <div class="col-12">
-                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCentered">
-                        Team A
+                    <c:forEach var="team" varStatus="vs" items="${teamrequests}">
+                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCentered${vs.index}">
+                        ${team.getTeam()}
                     </button>
-                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCentered">
-                        Team A
-                    </button>
-                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCentered">
-                        Team A
-                    </button>
-                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCentered">
-                        Team A
-                    </button>
-                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCentered">
-                        Team A
-                    </button>
-                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCentered">
-                        Team A
-                    </button>
+                    <br>
+                    <div class="modal" id="exampleModalCentered${vs.index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenteredLabel">Team title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul class="list-group">
+                                        <c:forEach var="member" items="${team.getTeammateses()}">
+                                        <li class="list-group-item">${member.getName()}</li>
+                                        </c:forEach>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Accept</button>
+                                    <button type="button" class="btn btn-primary">Refuse</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </c:forEach>
                 </div>
                 <div class="mr-auto">
                     <button type="button" class="btn btn-danger" name="stop tournament">Stop Tournament</button>
@@ -84,29 +95,7 @@
 
         <!-- Modal -->
 
-        <div class="modal" id="exampleModalCentered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenteredLabel">Team title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ul class="list-group">
-                            <li class="list-group-item">Member 1</li>
-                            <li class="list-group-item">Memeber 2</li>
-                            <li class="list-group-item">Member 3</li>
-                        </ul>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Accept</button>
-                        <button type="button" class="btn btn-primary">Refuse</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <hr class="my-4">
 
         <!--Filling the results-->

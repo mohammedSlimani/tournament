@@ -6,6 +6,8 @@
 package dao;
 
 import beans.Match;
+import beans.Tournament;
+import beans.UserAcc;
 import java.util.List;
 
 /**
@@ -14,7 +16,7 @@ import java.util.List;
  */
 public interface MatchDao {
 
-    boolean addMatch(Match match);
+    boolean addMatch(Match match,Tournament trn);
 
     boolean deleteMatch(Match match);
 
@@ -31,4 +33,6 @@ public interface MatchDao {
      List<Match> getFutureMatches();
      
      boolean enterResult(Match match, int scoreA, int scoreB);
+     
+     List<UserAcc> getParticipationRequests();
 }

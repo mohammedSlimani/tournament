@@ -30,8 +30,6 @@ public interface UserDao {
 
     boolean addTeammates(Teammates teammates, UserAcc user);
 
-    List getTeammates(UserAcc captain);
-
     UserAcc login(String username, String password);
 
     boolean approve(UserAcc user);

@@ -19,12 +19,10 @@ public class Match implements java.io.Serializable {
     public Match() {
     }
 
-    public Match(Tournament tournament, String teamA, String teamB, int scoreA, int scoreB, Date date) {
+    public Match(Tournament tournament, String teamA, String teamB, Date date) {
         this.tournament = tournament;
         this.teamA = teamA;
         this.teamB = teamB;
-        this.scoreA = scoreA;
-        this.scoreB = scoreB;
         this.date = date;
     }
 

@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import daoImpl.MatchDaoImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -23,6 +24,9 @@ public class MainResponsible extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        MatchDaoImpl dao = new MatchDaoImpl();
+        request.setAttribute("teamrequests", dao.getParticipationRequests()); //List of users
         request.getRequestDispatcher("responsible/main.jsp").forward(request, response);
 
     }

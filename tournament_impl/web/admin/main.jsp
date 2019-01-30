@@ -57,36 +57,37 @@
                     List of responsibles
                 </div>
                 <div class="col-12">
-                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCentered">
-                        Responsible A
-                    </button>
-                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCentered">
-                        Responsible B
-                    </button>
+                    <c:forEach var="r" items="${responsibles}" varStatus="vs">
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCentered${vs.index}">
+                            ${r.getName()}
+                        </button>
+                        <br>
+                        <!-- Modal -->
+                        <div class="modal" id="exampleModalCentered${vs.index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenteredLabel">Confirm Delete</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Do you want to delete this responsible?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Delete</button>
+                                        <button type="button" class="btn btn-primary">cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>
 
-        <!-- Modal -->
-        <div class="modal" id="exampleModalCentered" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenteredLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenteredLabel">Team title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Do you want to delete this responsible?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Delete</button>
-                        <button type="button" class="btn btn-primary">cancel</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <hr class="my-4">
 
         <!--Stats-->

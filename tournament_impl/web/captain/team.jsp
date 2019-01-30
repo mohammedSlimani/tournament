@@ -62,7 +62,7 @@
                 <div class="col-12">
                     <div class="span6">
                         <div class="display-6 text-center">
-                            Your team Title
+                            ${user.getTeam()}
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                         <br>
                         <small>Press + to add another Player, Max 8:)</small>
                         <br>
-                        <button class="btn btn-primary">Submit Team!</button>
+                        <button class="btn btn-primary" name="registration" type="submit">Submit Team!</button>
                     </div>
                 </div>
             </div>

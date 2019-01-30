@@ -24,12 +24,12 @@
             </column>
         </property>
         <property name="scoreA" type="int">
-            <column name="score_a" not-null="true">
+            <column name="score_a" not-null="false">
                 <comment>the score of the first team. The responsible is the only one who can enter it.</comment>
             </column>
         </property>
         <property name="scoreB" type="int">
-            <column name="score_b" not-null="true">
+            <column name="score_b" not-null="false">
                 <comment>the score of the second team. The responsible is the only one who can enter it.</comment>
             </column>
         </property>

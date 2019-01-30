@@ -6,6 +6,8 @@
 package daoImpl;
 
 import beans.Match;
+import beans.Tournament;
+import beans.UserAcc;
 import dao.MatchDao;
 import java.util.Date;
 import java.util.List;
@@ -21,11 +23,12 @@ import utils.HibernateUtil;
 public class MatchDaoImpl implements MatchDao {
 
     @Override
-    public boolean addMatch(Match match) {
+    public boolean addMatch(Match match,Tournament trn) {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         try {
             Transaction tx = session.beginTransaction();
+            match.setTournament(trn);
             session.save(match);
             tx.commit();
             session.close();
@@ -47,7 +50,7 @@ public class MatchDaoImpl implements MatchDao {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         try {
-            String hql = "FROM Match M order by date ";
+            String hql = "FROM Match";
             Query query = session.createQuery(hql);
             List results = query.list();
 
@@ -57,6 +60,7 @@ public class MatchDaoImpl implements MatchDao {
                 return null;
             } else {
                 List<Match> match = (List<Match>) results;
+                System.out.println(match);
                 session.close();
                 return match;
             }
@@ -212,4 +216,30 @@ public class MatchDaoImpl implements MatchDao {
         }
     }
 
+    @Override
+    public List<UserAcc> getParticipationRequests() {
+       Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            String hql = "FROM UserAcc where approved =0 ";
+            Query query = session.createQuery(hql);
+            List results = query.list();
+
+            if (results.isEmpty()) {
+                session.close();
+                System.out.println("The results is empty");
+                return null;
+            } else {
+                List<UserAcc> usersRequests = (List<UserAcc>) results;
+                session.close();
+                return usersRequests;
+            }
+
+        } catch (Exception e) {
+            System.out.println("The shit happened: " + e);
+            session.close();
+            return null;
+        } 
+    }
+    
 }

@@ -6,8 +6,13 @@
 package daoImpl.test;
 
 import beans.Auth;
+import beans.Match;
+import beans.Tournament;
 import beans.UserAcc;
+import daoImpl.MatchDaoImpl;
+import daoImpl.TournamentDaoImpl;
 import daoImpl.UserDaoImpl;
+import java.util.Date;
 
 /**
  *
@@ -17,8 +22,8 @@ public class DAOTest {
 
     public static void main(String[] args) {
         //loginTest();
-        addUserAccTest();
-
+        //addUserAccTest();
+        addTournament();
     }
 
     public static void addUserAccTest() {
@@ -45,4 +50,21 @@ public class DAOTest {
         }
 
     }
+    
+    public static void addTournament(){
+        TournamentDaoImpl dao = new TournamentDaoImpl();
+        Tournament trn = new Tournament(new Date(), new Date());
+        trn.setDateEnd(null);
+        trn.setRegistrationEnd(new Date());
+        trn.setState(1);
+        dao.addTournament(trn);
+        MatchDaoImpl daao = new MatchDaoImpl();
+        Match m = new Match(trn, "team A", "team B", new Date());
+        Match m2 = new Match(trn, "team C", "team D", new Date());
+        
+        daao.addMatch(m, trn);
+        daao.addMatch(m2, trn);
+
+    }
+    
 }
