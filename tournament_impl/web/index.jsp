@@ -45,6 +45,7 @@
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a>
                         </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -248,7 +249,7 @@
                         <img class="card-img-top" src="assets/img/team/amine.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Sebâaoui Amine</h4>
-                            <p class="card-text"> Know also as "MR Steal your Girl, Better watch out for your girl." </p>
+                            <p class="card-text"> Known also as "MR Steal your Girl, Better watch out for your girl." </p>
                             <a href="https://www.facebook.com/amine.sebaaoui/" target="_blank" class="btn btn-outline-secondary"> See Profile</a>
                         </div>
                     </div>

@@ -42,6 +42,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="${pageContext.request.contextPath}/responsiblemain">Control Room</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="${pageContext.request.contextPath}">Log Out</a>
+                        </li>
                     </ul>
                 </div>
             </div>
