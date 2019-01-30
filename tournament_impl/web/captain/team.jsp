@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +48,7 @@
                             <a class="nav-link " href="${pageContext.request.contextPath}/captainprofile">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="${pageContext.request.contextPath}/captainteam">Team</a>
+                            <a class="nav-link active" href="${pageContext.request.contextPath}/captainteam">Team</a>
                         </li>
                     </ul>
                 </div>

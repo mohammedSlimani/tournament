@@ -27,16 +27,7 @@ public class RegistrationUtils {
         Auth auth = new Auth(username, user, password);
 
         UserDaoImpl dao = new UserDaoImpl();
-        return dao.register(user, auth) && !isEmpty(teamTitle); //Because the TeamTitle is nullable only for the admin
+        return dao.addUser(user, auth) && !StringUtils.isEmpty(teamTitle); //Because the TeamTitle is nullable only for the admin
         
     }
-    
-    public static boolean isEmpty(String str) {
-
-        if (str == null || str.trim().equals("")) {
-            return true;
-        }
-        return false;
-    }
-
 }

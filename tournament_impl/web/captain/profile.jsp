@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +59,7 @@
         <!--title and picture -->
         <div class="container col-6 padding">
             <div class="display-4">
-                You can change the password, See how nice I am :)
+                You can change the password, See how nice we are :)
             </div>
             <div class="input-group">
                 <div class="input-group-prepend">

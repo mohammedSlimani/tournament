@@ -34,7 +34,8 @@ public interface UserDao {
 
     UserAcc login(String username, String password);
 
-    boolean register(UserAcc user, Auth auth);
+    boolean approve(UserAcc user);
     //edit teammates ?
+    
 
 }

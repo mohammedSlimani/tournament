@@ -18,6 +18,4 @@ public interface CaptainService {
 
     boolean editPersonalInfo(HttpServletRequest request);
 
-    boolean registerTeam(HttpServletRequest request);
-
 }

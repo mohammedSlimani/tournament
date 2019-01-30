@@ -23,7 +23,7 @@ public class LoginUtil {
         String password = request.getParameter("password");
 
         //If the fields are empty we do nothing 
-        if (isEmpty(username) || isEmpty(password)) {
+        if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
             return;
         }
 
@@ -43,11 +43,4 @@ public class LoginUtil {
 
     }
 
-    public static boolean isEmpty(String str) {
-
-        if (str == null || str.trim().equals("")) {
-            return true;
-        }
-        return false;
-    }
 }

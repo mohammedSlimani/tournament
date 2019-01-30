@@ -21,4 +21,14 @@ public interface MatchDao {
     List getAllmatches();//and I filter this in my Matchservice
 
     boolean editMatch(Match match);
+    
+    Match getCloseMatch();
+    
+    List getMatchHistory();
+    
+    List getAppendingForResults();
+    
+     List<Match> getFutureMatches();
+     
+     boolean enterResult(Match match, int scoreA, int scoreB);
 }

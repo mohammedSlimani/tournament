@@ -122,8 +122,24 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean register(UserAcc user, Auth auth) {
-        return addUser(user, auth);
+    public boolean approve(UserAcc user) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            Transaction tx = session.beginTransaction();
+            Query query = session.createQuery("update user_acc set approved = 1" +
+    				" where id = :_userid");
+            query.setParameter("_userid", user.getId());
+            query.executeUpdate();
+            tx.commit();
+            session.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println("The shit happened: " + e);
+            session.close();
+            return false;
+        }
     }
+
 
 }

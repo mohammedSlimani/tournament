@@ -16,12 +16,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface MatchService {
 
-    /**
-     * this method will pair teams against each other
-     *
-     * @return
-     */
-    boolean MatchTeams();
 
     /**
      * The responsible will enter the Result of each match after that match ends
@@ -60,5 +54,11 @@ public interface MatchService {
      * @return
      */
     List<Match> getFutureMatches();
+    
+    /**
+     * Return the closest match in the future
+     * @return 
+     */
+    Match getNextMatch();
 
 }

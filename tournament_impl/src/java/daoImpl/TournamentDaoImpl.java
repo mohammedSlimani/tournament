@@ -9,6 +9,7 @@ import beans.Tournament;
 import dao.TournamentDao;
 import java.util.List;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import utils.HibernateUtil;
 
 /**
@@ -17,13 +18,21 @@ import utils.HibernateUtil;
  */
 public class TournamentDaoImpl implements TournamentDao {
 
-    protected Session getSession() {
-        return HibernateUtil.getSessionFactory().openSession();
-    }
-
     @Override
     public boolean addTournament(Tournament trn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        try {
+            Transaction tx = session.beginTransaction();
+            session.save(trn);
+            tx.commit();
+            session.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println("The shit happened: " + e);
+            session.close();
+            return false;
+        }    
     }
 
     @Override
