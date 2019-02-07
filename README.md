@@ -1,11 +1,12 @@
 # tournament
-J2EE Practice.
 FootBall Management System. Responsibles will make tournaments and the captains can register thier teams. 
 
 ## What I learned
-- Servlets and JSPs
-- BootStrap 
--JavaScript
+*J2EE Practice
+*Github practice
+*Servlets and JSPs
+*BootStrap 
+*JavaScript
 
 ## System description
 This is a system that manages the football tournaments in my school. 
@@ -20,4 +21,4 @@ Even thoght I have read that MVC is no longer a good design pattern (https://cir
 ##### See the uml graphs for a better understanding of this app
 
 ## ScreenShots
-![Index](https://raw.githubusercontent.com/mohammedSlimani/tournament/master/tournament_design/ScreenShots/visiteur\ main.png)
+![Index](https://raw.githubusercontent.com/mohammedSlimani/tournament/master/tournament_design/ScreenShots/visitor.png)
