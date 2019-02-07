@@ -20,4 +20,4 @@ Even thoght I have read that MVC is no longer a good design pattern (https://cir
 ##### See the uml graphs for a better understanding of this app
 
 ## ScreenShots
-![index page] (/tournament_design/ScreenShots/visiteur\ main.png)
+![Index](https://raw.githubusercontent.com/mohammedSlimani/tournament/master/tournament_design/ScreenShots/visiteur\ main.png)
