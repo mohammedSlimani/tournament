@@ -21,4 +21,16 @@ Even thoght I have read that MVC is no longer a good design pattern (https://cir
 ##### See the uml graphs for a better understanding of this app
 
 ## ScreenShots
+##### Captain Views
 ![Index](https://raw.githubusercontent.com/mohammedSlimani/tournament/master/tournament_design/ScreenShots/visitor.png)
+![Captain main](https://raw.githubusercontent.com/mohammedSlimani/tournament/master/tournament_design/ScreenShots/captain_main.png)
+![Captain Adding team](https://raw.githubusercontent.com/mohammedSlimani/tournament/master/tournament_design/ScreenShots/captain_team.png)
+
+#### Admin View (can also have the responsibles views)
+![Main admin](https://raw.githubusercontent.com/mohammedSlimani/tournament/master/tournament_design/ScreenShots/admin_main.png)
+
+#### Responsibles Views
+![Control room](https://raw.githubusercontent.com/mohammedSlimani/tournament/master/tournament_design/ScreenShots/admin_control.png)
+![Team requests](https://raw.githubusercontent.com/mohammedSlimani/tournament/master/tournament_design/ScreenShots/Team_requests.png)
+
+
