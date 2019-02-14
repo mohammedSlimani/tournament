@@ -1,11 +1,13 @@
 # tournament
+###### Design and Implementation included. 
 FootBall Management System. Responsibles will make tournaments and the captains can register thier teams. 
 
-## What I learned
+## Purpose Of this project
 *J2EE Practice
 *Github practice
+*MVC Design Pattern practice.
 *Servlets and JSPs
-*BootStrap 
+*BootStrap
 *JavaScript
 
 ## System description
