@@ -3,12 +3,12 @@
 FootBall Management System. Responsibles will make tournaments and the captains can register thier teams. 
 
 ## Purpose Of this project
-*J2EE Practice
-*Github practice
-*MVC Design Pattern practice.
-*Servlets and JSPs
-*BootStrap
-*JavaScript
+- J2EE Practice
+- Github practice
+- MVC Design Pattern practice.
+- Servlets and JSPs
+- BootStrap
+- JavaScript
 
 ## System description
 This is a system that manages the football tournaments in my school. 
